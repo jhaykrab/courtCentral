@@ -1,0 +1,40 @@
+/* Style the "Reserve" button */
+.btn.theme-btn { /* Notice the dot between .btn and .theme-btn */
+    color: white; /* Text color */
+    background-color: #2C3E50; /* Background color */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    border-radius: 5px; /* Border radius */
+    cursor: pointer; /* Make it look clickable */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+    border: 1px solid transparent; /* Transparent border to have border-color transition */
+}
+
+.btn.theme-btn:hover {
+    background-color: #768ea5; /* Darker background color on hover */
+    border-color: #2C3E50; /* Border color on hover */
+}
+
+.btn.theme-btn:active {
+    background-color: #768ea5; /* Even darker background on click */
+    border-color: #2C3E50; /* Border color when active */
+}
+
+/* SUCCESS/ERROR MESSAGE*/
+.alert-success-custom {
+    background-color: rgba(144, 238, 144, 0.6); /* Light green with transparency */
+    color: #155724; /* Dark green text for readability */
+    border: 1px solid #155724; /* Subtle border */
+}
+
+.alert-error-custom {
+    background-color: rgba(255, 99, 71, 0.6); /* Light red with transparency */
+    color: #721c24; /* Dark red text for readability */
+    border: 1px solid #721c24; /* Subtle border */
+}
+
+.alert {
+    transition: opacity 0.5s ease-out; /* Smooth fade effect */
+}
+
+

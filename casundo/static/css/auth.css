@@ -1,0 +1,245 @@
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 2rem;
+    background-color: #3a5066; /* Keep this as fallback */
+    position: relative;
+}
+
+/* Add a background overlay */
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(58, 80, 102, 0.5); /* Semi-transparent version of #3a5066 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    z-index: 1;
+}
+
+/* Update the auth-card */
+.auth-card {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* Optional: Add a subtle animation on hover */
+.auth-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Optional: Add support for older browsers */
+@supports not (backdrop-filter: blur(15px)) {
+    .auth-card,
+    .auth-card-narrow {
+        background: rgba(255, 255, 255, 0.95);
+    }
+}
+
+/* Update the narrow card variant */
+.auth-card-narrow {
+    max-width: 30%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.auth-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Center horizontally */
+    gap: 0;
+    margin-bottom: 2rem;
+    text-align: center; /* Ensure text alignment is centered */
+}
+
+/* Update text colors for better contrast */
+.auth-title-left, 
+.auth-title-centered {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-title-left {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-left: 2.5vw;
+}
+
+.auth-logo-left {
+    width: 80px; /* Adjust logo size */
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.auth-title-centered {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-left: -2.5vw;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.auth-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.auth-fields-two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.auth-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.auth-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.auth-input {
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-input:focus {
+    border-color: #2C3E50;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    outline: none;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%; /* Ensure the wrapper takes full width */
+}
+
+.password-wrapper input {
+    width: 100%; /* Ensure the input field always takes full width */
+    padding-right: 40px; /* Add padding to prevent text overlap with the toggle icon */
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #2C3E50;
+}
+
+.password-toggle:hover {
+    color: #1A2A3A; /* Darker color on hover */
+}
+
+.auth-button {
+    padding: 0.75rem;
+    background: rgba(44, 62, 80, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.auth-button:hover {
+    background: rgba(26, 42, 58, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.auth-button:active {
+    background-color: #0E1A25; /* Even darker blue on active */
+    transform: scale(0.98); /* Slightly shrink on click */
+}
+
+.auth-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.3); /* Add focus ring */
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: #ffffff;
+}
+
+.auth-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+    color: #e5e5e5; /* Darker color on hover */
+}
+
+.auth-message {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.auth-message-error {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.auth-message-success {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

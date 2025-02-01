@@ -1,0 +1,75 @@
+/* Custom CSS for the court registration form */
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #2C3E50;;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-md);
+}
+
+.form-control:focus {
+    border-color: #2C3E50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #2C3E50;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1A2A3A;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    background-color: #0E1A25;
+    transform: translateY(0);
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-md-6 {
+        width: 100%; /* Stack columns on smaller screens */
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+}

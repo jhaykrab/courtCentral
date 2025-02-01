@@ -1,0 +1,210 @@
+/* Main Container for Calendar and Sidebar */
+.main-container {
+    display: flex;
+    flex-direction: row; /* Ensure elements are in one row */
+    gap: 20px; /* Space between calendar and sidebar */
+    padding: 20px; /* Optional: Add padding around the container */
+    max-width: 90%; /* Take up 90% of the page width */
+    margin: 20px auto; /* Center the container horizontally */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    min-height: calc(100vh - 40px);/* Ensure the container takes up at least the full viewport height */
+}
+
+/* Sidebar Height and Scroll Adjustments */
+#reservations-sidebar {
+    flex: 1;
+    min-width: 400px;
+    height: calc(100vh - 140px); /* Adjust based on your header/footer */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 20px; /* Adjust based on your layout */
+}
+
+
+#reservations-sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+#reservations-sidebar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#reservations-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+#reservations-sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #2C3E50;
+}
+
+.no-reservations {
+    text-align: center;
+    margin-top: 20px;
+}
+.no-reservations p {
+    font-size: 1em;
+    font-weight: normal;
+}
+.no-reservations .btn {
+    margin-top: 10px;
+}
+
+.court-reservations {
+    margin-bottom: 20px;
+}
+
+.court-reservations h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.reservation-item {
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-item p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Add this to your base.css or court_calendar.css */
+.reservation-actions {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px; /* Space above the buttons */
+}
+
+.reservation-actions .btn {
+    flex: 1; /* Make buttons take equal space */
+}
+
+/* Calendar Container Styling */
+#calendar-container {
+    flex: 3; /* Takes up 3 parts of the available space (sidebar takes 1 part) */
+    min-width: 900px;
+    min-height: 700px; /* Adjust height as needed */
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+    /* Calendar Box */
+    #calendar {
+        width: 100%; /* Full width of its container */
+        min-height: 600px; /* Adjust calendar height */
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Hover Effect for Calendar */
+    #calendar:hover {
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        transform: scale(1.01);
+    }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+
+    #reservations-sidebar,
+    #calendar-container {
+        width: 100%;
+        height: auto;
+        min-height: 500px; /* Minimum height on mobile */
+    }
+
+    #reservations-sidebar {
+        position: static;
+    }
+}
+/* CALENDAR */
+.calendar-container {
+    user-select: none;
+    cursor: default;
+}
+
+/* ✅ Customize event colors in FullCalendar */
+.fc-event {
+    background-color: #4CAF50 !important; /* Green */
+    border-color: #388E3C !important; /* Darker Green */
+    color: white !important;
+}
+
+/* ✅ Success & Error Message Styles */
+.alert-success-custom {
+    background-color: rgba(144, 238, 144, 0.6);
+    color: #155724;
+    border: 1px solid #155724;
+}
+
+.alert-error-custom {
+    background-color: rgba(255, 99, 71, 0.6);
+    color: #721c24;
+    border: 1px solid #721c24;
+}
+
+.alert {
+    transition: opacity 0.5s ease-out;
+}
+
+.highlighted-event {
+    background-color: #ffd700 !important;
+    border-color: #ffa500 !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+.reservation-item {
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    color: #2d4055;
+    font-weight: 500;
+}
+
+#modalReservationNumber {
+    font-family: monospace;
+    color: #fcad5f;
+    font-weight: 500;
+}
+
+.reservation-item.highlighted {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+}
+
+/* Hide empty court sections when filtering */
+.court-reservations:not(:has(.reservation-item[style*="display: block"])) {
+    display: none;
+}
+
+
+
+
+
