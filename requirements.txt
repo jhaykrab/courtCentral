@@ -16,4 +16,8 @@ setuptools==75.1.0
 six==1.16.0
 sqlparse==0.5.3
 tzdata==2024.2
+<<<<<<< HEAD
 vboxapi==1.0
+=======
+
+>>>>>>> cb0e480e6bede0c1499cd8c2a8dbbab0e37e686c
