@@ -1,5 +1,8 @@
 {% load static %}
 
+
+
+
 <!-- This is the form that will be loaded in the modal -->
 <div class="auth-card {% if mode == 'login' %}auth-card-narrow{% endif %}">
     <div class="auth-header">
@@ -13,15 +16,15 @@
                 Create Account
             {% endif %}
         </h2>
-        
+
     </div>
 
-    <form method="POST" enctype="multipart/form-data" 
-          action="{% if mode == 'login' %}{% url 'login' %}{% else %}{% url 'signup' %}{% endif %}" 
+    <form method="POST" enctype="multipart/form-data"
+          action="{% if mode == 'login' %}{% url 'login' %}{% else %}{% url 'signup' %}{% endif %}"
           class="auth-form">
-        {% csrf_token %} 
+        {% csrf_token %}
 
-        
+
         <div class="auth-fields {% if mode == 'signup' %}auth-fields-two-column{% endif %}">
             <!-- Username or Email field -->
             <div class="auth-field">
@@ -29,7 +32,7 @@
                     <i class="fas fa-user"></i>
                     {% if mode == 'login' %}Username or Email{% else %}Username{% endif %}*
                 </label>
-                <input type="text" name="username_or_email" required class="auth-input" 
+                <input type="text" name="username_or_email" required class="auth-input"
                        placeholder="{% if mode == 'login' %}Enter username or email{% else %}Choose a username{% endif %}">
             </div>
 
@@ -51,7 +54,7 @@
                     Password*
                 </label>
                 <div class="password-wrapper">
-                    <input type="password" name="password" id="password" required class="auth-input" 
+                    <input type="password" name="password" id="password" required class="auth-input"
                            placeholder="Enter your password">
                     <span class="password-toggle" onclick="togglePasswordVisibility()">
                         <i class="fas fa-eye"></i>
@@ -66,19 +69,19 @@
                         <i class="fas fa-phone"></i>
                         Phone Number*
                     </label>
-                    <input type="tel" name="phone_number" required class="auth-input" 
+                    <input type="tel" name="phone_number" required class="auth-input"
                         placeholder="Enter your phone number">
                 </div>
-            
+
                 <div class="auth-field">
                     <label class="auth-label">
                         <i class="fas fa-map-marker-alt"></i>
                         Address*
                     </label>
-                    <textarea name="address" required class="auth-input" 
+                    <textarea name="address" required class="auth-input"
                             placeholder="Enter your address" rows="2"></textarea>
                 </div>
-            
+
                 <div class="auth-field">
                     <label class="auth-label">
                         <i class="fas fa-image"></i>
@@ -105,13 +108,13 @@
     </form>
 
 
-    <p class="auth-footer">
+   <p class="auth-footer">
         {% if mode == 'login' %}
-            <span>Don't have an account?</span>
-            <a href="{% url 'signup' %}" class="auth-link">Create Account</a>
+            <span class="text-blue-900">Don't have an account?</span>
+            <a href="{% url 'signup' %}" class="text-blue-600 hover:text-green-400 font-bold auth-link">Create Account</a>
         {% else %}
-            <span>Already have an account?</span>
-            <a href="{% url 'login' %}" class="auth-link">Sign In</a>
+            <span class="text-blue-900">Already have an account?</span>
+            <a href="{% url 'login' %}" class="text-blue-600 hover:text-green-400 font-bold auth-link">Sign In</a>
         {% endif %}
     </p>
 </div>
