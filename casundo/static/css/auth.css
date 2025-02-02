@@ -60,43 +60,31 @@
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
-
 .auth-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Center horizontally */
+    justify-content: center;
     gap: 0;
     margin-bottom: 2rem;
-    text-align: center; /* Ensure text alignment is centered */
-}
-
-/* Update text colors for better contrast */
-.auth-title-left, 
-.auth-title-centered {
-    color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.auth-title-left {
-    flex-grow: 1;
-    text-align: left;
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-left: 2.5vw;
+    text-align: center;
 }
 
 .auth-logo-left {
-    width: 80px; /* Adjust logo size */
+    width: 60px; /* Reduced from 80px to 60px */
     height: auto;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
 }
 
+.auth-title-left,
 .auth-title-centered {
-    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: bolder;
-    margin-left: -2.5vw;
+    margin: 0;
+    transform: none; /* Removed the translateY since we're now using column layout */
 }
 
 .auth-form {
@@ -199,19 +187,21 @@
 .auth-footer {
     text-align: center;
     margin-top: 1.5rem;
-    font-size: 0.875rem;
-    color: #ffffff;
+    color: #2C3E50;
+    padding: 1rem 0;
+    display: block; /* Make sure it's displayed */
+    visibility: visible; /* Make sure it's visible */
 }
 
 .auth-link {
-    color: #ffffff;
+    color: #2C3E50;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .auth-link:hover {
-    color: #e5e5e5; /* Darker color on hover */
+    color: #ff7f00; /* Darker color on hover */
 }
 
 .auth-message {
